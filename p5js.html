@@ -43,272 +43,30 @@
 </nav>
 <h1>Hello This is the page for P5JS Works!</h1>
 <br>
-<h2></h2>P5Js Self portrait<h2>
+<h2>P5Js Self portrait</h2>
 <iframe src="images/andre_p5js_selfie.png" height="600" width="600" title="Iframe Example"></iframe>
 <p>A self portrait image created using processing and p5js to create basic shapes and colors in a way to express the defining characterisitcs of myself.</p>
-<p>Code below:</p>
+<p>Code below:</p>	
+<iframe src="P5JS/sketch_251029b.js" height="600" width="600" title="Iframe Example"></iframe>
 <br>
-<pre>function setup() {
-createCanvas(600, 600);
-}
-function draw() {
-background(224);
-//background square
-strokeWeight(7); 
-stroke(0);
-fill(255, 129, 44);
-rect(100,30,400,600);
-
-//body and head
-strokeWeight(7); 
-fill(0, 255, 0, 160);
-rect(150,320,300,400);
-fill(255, 187, 142);
-ellipse(300, 200, 220, 250);
-
-//shirt, arms, and glasses
-fill(0);
-quad(210,300,390,300,240,500,360,500);
-fill(300);
-line(200,400,200,500);
-line(400,400,400,500);
-fill(255, 187, 142);
-rect(150,450,50,147);
-rect(400,450,50,147);
-fill(300,300,300,200);
-rect(250,150,100,40);
-rect(360,150,100,50);
-
-//hair and details
-fill(0);
-ellipse(200,100,70,100);
-rotate(.1);
-ellipse(340,51,250,080);
-fill(200);
-strokeWeight(0); 
-rect(250,65,180,02);
-rect(230,45,180,02);
-
-//Decorations
-strokeWeight(7); 
-fill(300);
-rect(077,280,50,50);
-rect(060,300.50,50);
-line(077,280,060,300);
-line(115,280,100,300);
-line(114,330,100,350);
-rotate(-.1);
-rect(510,180,50,50);
-rect(530,200.50,50);
-line(510,180,530,200);
-line(560,180,580,200);
-line(510,230,530,250);
-
-strokeWeight(15);
-stroke(255, 129, 44);
-ellipse(300,250,50,50);
-
-strokeWeight(07);
-stroke(32,63,172);
-fill(32,63,172);
-ellipse(300,250,10,10);
-
-strokeWeight(09);
-stroke(255, 129, 44);
-fill(255, 129, 44);
-strokeJoin(ROUND); // Round the stroke corners
-line(290,210,320,228);
-line(250,225,310,225);
-line(250,260,280,225);
-
-}</pre>
 <br>
 <h2>DIY PhotoShop</h2>
 <img class="img-fluid" src="images/jm51599.jpg" alt="DIY photoshop" width="600" height="600">
 <img class="img-fluid" src="images/jm5154333.jpg" alt="DIY photoshop" width="600" height="600">
-<iframe src="P5JS/diyps2025.js" height="600" width="600" title="Iframe Example"></iframe>
-
 <p>A project creating custom brushes that do different things assigned to different keybinds in p5js via code</p>
 <p>I made a tool that lets you change between 3 different brush sizes and 6 different colors along with some custom brushes for random things. You can also erase your work as well with the "2" tool.
 
 Its purpose is mainly for fun and to create anything with basic colors, shapes and brush sizes</p>
-<p>Code below:</p>
+<p>Code below:</p>	
+<iframe src="P5JS/diyps2025.js" height="600" width="600" title="Iframe Example"></iframe>
 <br>
-<pre>var img;
-//var img2;
-//var img3;
-var initials ='jm'; // your initials
-var choice = '1'; // starting choice, so it is not empty
-var screenbg = 250; // off white background
-var lastscreenshot=61; // last screenshot never taken
-var angle = 0.0; 
-
-function preload() {
-// preload() runs once, it may make you wait
-//  img = loadImage('cat.png');  // cat.jpg needs to be next to this .js file
-// you can link to an image on your github account
-  img = loadImage('https://veryprofessional3d.github.io/images/cat3.jpg');
-  img2 = loadImage('https://VisionDrift.github.io/images/skibidi_toilet_roblox_png_by_bellamxp_dg3l6l9-fullview.png');
-  //img3 = loadImage('https://veryprofessional3d.github.io/images/rainbow.gif');
-}
-
-function setup() {
-createCanvas(600, 600);  // canvas size
-background(screenbg);   // use our background screen color
-
-}
-
-function draw() {
-  if (keyIsPressed) {1 //checks for when a key is pressed on the keyboard
-    choice = key; // set choice to the key that was pressed
-    clear_print(); // check to see if it is clear screen or save image
-  }
-  if (mouseIsPressed){
-    newkeyChoice(choice);  // if the mouse is pressed call newkeyChoice
-  }
-}
-
-function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
-  // the key mapping if statements that you can change to do anything you want.
-  // just make sure each key option has the a stroke or fill and then what type of 
-  // graphic function
- if (toolChoice == '1' ) {  // first tool default
-    stroke(0);
-    strokeWeight(04);
-    line(mouseX, mouseY, pmouseX, pmouseY);
-  } else if (toolChoice == '2') { // second tool eraser
-    stroke(screenbg);
-    strokeWeight(04);
-    line(mouseX, mouseY, pmouseX, pmouseY);
-
- //stroke weight controls, doesn't work for custom brushes
-  } else if (toolChoice == 'q' || toolChoice == 'Q') { // q changes stroke to default
-    strokeWeight(04);
-    line(mouseX, mouseY, pmouseX, pmouseY);
-  } else if (toolChoice == 'w' || toolChoice == 'W') { // w changes stroke to large
-    strokeWeight(40);
-    line(mouseX, mouseY, pmouseX, pmouseY);
-  } else if (toolChoice == 'e' || toolChoice == 'E') { // e changes strokeweight to very large
-    strokeWeight(60);
-    line(mouseX, mouseY, pmouseX, pmouseY);
-
-//custom brushes    
-  } else if (toolChoice == '3') { // third tool custom ellipse
-    strokeWeight(1);
-    fill(300, 200, 0);
-    ellipse(mouseX, mouseY, 50, 50);
-    fill(300, 100, 10);
-    ellipse(mouseX, mouseY, 30, 30);
-    fill(300);
-  } else if (toolChoice == '4') { //tree brush
-    strokeWeight(0);
-    fill(14,142,23);
-    triangle(mouseX, mouseY, mouseX+50, mouseY+50, mouseX-50, mouseY+50,);
-    fill(142, 81, 15);
-    rect(mouseX-10, mouseY+50, 20, 40)
-    fill(300)
-    strokeWeight(4);
-    
-  } else if (key == '5') { // this tool calls a function and makes a rectangle
-    stroke(0);
-    strokeWeight(2);
-    testbox(0);
-    
-
-
-  } else if (toolChoice == '6') {
-    strokeWeight(01);
-    stroke(0);
-    triangle(mouseX, mouseY, mouseX+50, mouseY+50, mouseX-50, mouseY+50,);
-    6
-  } else if (toolChoice == '7') {
-    strokeWeight(01)
-    fill(300, 100, 0, 10);
-    rect(mouseX, mouseY, 40, 40);
-    fill(300);
-//Images    
-  } else if (toolChoice == '8') {
-    image(img2, mouseX, mouseY, 50, 50);
-  } else if (toolChoice == '9') {
-    image(img2, mouseX+random(120), mouseY+random(120), 50, 50);
-    
-//rotating square    
-  } else if (toolChoice == '0') {
-    translate(mouseX, mouseY);
-    rotate(angle);
-    rect(-15, -15, 30, 30);
-    angle += 0.1;
-    
-//color choice, default is D = black
-  } else if (toolChoice == 'r' || toolChoice == 'R') { // r changes stroke to red
-    stroke(228, 8, 10);
-    strokeWeight(04);
-    line(mouseX, mouseY, pmouseX, pmouseY);
-    
-    
-  } else if (toolChoice == 'o' || toolChoice == 'O') { // o changes stroke to orange
-    stroke(254, 153, 0);
-    strokeWeight(04);
-    line(mouseX, mouseY, pmouseX, pmouseY);   
-    
-  } else if (toolChoice == 'y' || toolChoice == 'Y') { // y changes stroke to yellow
-    stroke(255, 222, 89);
-    strokeWeight(04);
-    line(mouseX, mouseY, pmouseX, pmouseY);
-    
-  } else if (toolChoice == 'g' || toolChoice == 'G') { // g changes stroke to green
-    stroke(125, 218, 88);
-    strokeWeight(04);
-    line(mouseX, mouseY, pmouseX, pmouseY);   
-    
-  } else if (toolChoice == 'b' || toolChoice == 'B') { // b changes stroke to blue
-    stroke(42, 112, 232);
-    strokeWeight(04);
-    line(mouseX, mouseY, pmouseX, pmouseY);    
-    
-  } else if (toolChoice == 'p' || toolChoice == 'P') { // p changes stroke to purple
-    stroke(101, 1, 183);
-    strokeWeight(04);
-    line(mouseX, mouseY, pmouseX, pmouseY);
-    
-  } else if (toolChoice == 'd' || toolChoice == 'd') { // p changes stroke to default black
-    stroke(0, 0, 0);
-    strokeWeight(04);
-    line(mouseX, mouseY, pmouseX, pmouseY);  
-    
-  }
- }
- 
-function testbox(r, g, b) {
-// this is a test function that will show you how you can put your own functions into the sketch
-  x = mouseX;
-  y = mouseY;
-  fill(r, g, b);5
-  rect(mouseX, mouseY, 40, 80);
-
-}
-
-
-function clear_print() {
-// this will do one of two things, x clears the screen by resetting the background
-// p calls the routine pme, which saves a copy of the screen
-  if (key == 'x' || key == 'X') {
-    background(screenbg); // set the screen back to the background color
-  } else if (key == 's' || key == 'S') {
-     saveme();  // call saveme which saves an image of the screen
-  }
-}
-
-function saveme(){
-    //this will save the name as the intials, date, time and a millis counting number.
-    // it will always be larger in value then the last one.
-  filename=initials+day() + hour() + minute() +second();
-  if (second()!=lastscreenshot) { // don't take a screenshot if you just took one
-    saveCanvas(filename, 'jpg');
-    key="";
-  }
-  lastscreenshot=second(); // set this to the current second so no more than one per second
-  
-}</pre>
+<br>
+<h2>P5JS Clicking Game</h2>
+<img class="img-fluid" src="images/Screenshot 2025-11-10 151134.png" alt="Game" width="600" height="600">	
+<p>A project creating custom brushes that do different things assigned to different keybinds in p5js via code</p>
+<p>Code below:</p>	
+<iframe src="P5JS/p5js_Game.js" height="600" width="600" title="Iframe Example"></iframe>
+<br>
+<br>
 </body>
 </html>
