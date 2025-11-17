@@ -78,7 +78,7 @@ function levelOne(){
   }//checks if mouse touches ball
   if(score >=5){
     background(random(255),random(255),random(255));
-    gameState = gameState+1;
+    gameState = gameState+4;
   }
   image(img, ballx-50, bally-40, ballSize+50, ballSize+80);
   line(ballx,bally,mouseX,mouseY);
@@ -119,7 +119,6 @@ function levelTwo(){
 
 function levelThree(){
   background(255, 236, 161); 
-  text(frameCount, 50, 50);
 
   frameRate(60);
   text("level 3!", width/2, height-20);
@@ -128,7 +127,6 @@ function levelThree(){
     ballx=random(width-100);
     bally=random(height-100);
     score = score+ 1;
-    startCounting = true; 
   }//checks if mouse touches ball
   if(score >=30){
     background(random(255),random(255),random(255));
@@ -231,11 +229,14 @@ function levelFive(){
   
   ballx=random(width-50);
   bally=random(height-50);  
+  random1= random(25, 500);
+  random2= random(25, 500);
+  random3= random(25, 500);
   image(img, ballx, bally, ballSize+20, ballSize+50);
   
-  image(img2, random1+50, random1-100, ballSize+80, ballSize+80);
-  image(img3, random2+100, random2+50, ballSize+100, ballSize+100);
-  image(img4, random3-100, random3+100, ballSize+50, ballSize+50);    
+  image(img2, random1, random3, ballSize+80, ballSize+80);
+  image(img3, random2, random1, ballSize+100, ballSize+100);
+  image(img4, random3, random2, ballSize+50, ballSize+50);    
   
 }
 
