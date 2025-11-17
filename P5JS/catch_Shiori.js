@@ -78,7 +78,7 @@ function levelOne(){
   }//checks if mouse touches ball
   if(score >=5){
     background(random(255),random(255),random(255));
-    gameState = gameState+4;
+    gameState = gameState+1;
   }
   image(img, ballx-50, bally-40, ballSize+50, ballSize+80);
   line(ballx,bally,mouseX,mouseY);
