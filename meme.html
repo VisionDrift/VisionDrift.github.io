@@ -5,11 +5,57 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-  img {
+img {
 	  display: block;
 	  margin-left: auto;
 	  margin-right: auto;
 	}
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
   </style>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -54,10 +100,25 @@
 <br>
 <p style="text-align:center;">Other Miscellaneous Works</p>
 
-<img class="img-fluid" src="memes/Shio_meme.png" alt="meme1" width="250" height="250" style="width:50%;">
-<img class="img-fluid" src="memes/Wolverine_Shiori.png" alt="meme2" width="250" height="250" style="width:50%;">
-<img class="img-fluid" src="memes/meme_art_74.png" alt="art 74 meme" width="250" height="250" style="width:50%;">
-<img class="img-fluid" src="memes/Pepper.png" alt="meme3" width="250" height="250" style="width:50%;">
 
+<div class="responsive">
+  <div class="gallery">
+      <img src="memes/Shio_meme.png" alt="Advent military patches" width="600" height="400">
+  </div>
+</div>
+<div class="responsive">
+  <div class="gallery">
+      <img src="memes/Wolverine_Shiori.png" alt="Advent military patches" width="600" height="400">
+  </div>
+</div>
+<div class="responsive">
+  <div class="gallery">
+      <img src="memes/Pepper.png" alt="Advent military patches" width="600" height="400">
+  </div>
+</div>
+<div class="responsive">
+  <div class="gallery">
+      <img src="memes/meme_art_74.png" alt="Advent military patches" width="600" height="400">
+  </div>
 </body>
 </html>
