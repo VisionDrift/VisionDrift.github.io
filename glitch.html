@@ -5,6 +5,59 @@
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+img {
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+  </style>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -15,6 +68,9 @@
   <div class="container-fluid">
     <!-- Links -->
     <ul class="navbar-nav">
+	  <li class="nav-item">
+        <h2>VisionDrift Portfolio</h2> 
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="index.html">Home</a>
       </li>
@@ -43,12 +99,28 @@
   </div>
 
 </nav>
-<h1>Hello This is the page for glitch art!</h1>
-<img src="glitches/glitch.png" alt="glitch1" width="250" height="250">
-<img src="glitches/Screenshot 2025-09-10 145311-1.png" alt="glitch2" width="250" height="250">
-<img src="glitches/Horse_glitch.png" alt="glitch3" width="250" height="250">
-<p>The series of images were made in reference to the passing of a beloved racehorse Haru Urara.
+<h1 style="text-align:center;">Hello, this is the page for glitch art!</h1>
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="glitches/Horse_glitch.png" alt="Advent military patches" width="600" height="400">
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="glitches/glitch.png" alt="Advent military patches" width="600" height="400">
+  </div>
+</div>
+<div class="responsive">
+  <div class="gallery">
+      <img src="glitches/Screenshot 2025-09-10 145311-1.png" alt="Advent military patches" width="600" height="400">
+  </div>
+</div>
+<br>
+<p style="text-align:center;">The series of images were made in reference to the passing of a beloved racehorse Haru Urara.
 The series of glitched images is meant to convey the sense of loss, pain, and acceptance of reality and a chance to move on. Loss of color, detail, and structure, pain from turmoil, and acceptance with new colors with underlying uncertainty</p>
+
 
 </body>
 </html>
