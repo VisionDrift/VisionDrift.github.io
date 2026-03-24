@@ -1,0 +1,401 @@
+/* VisionDrift — layout inspired by https://visiondrift.weebly.com/ */
+:root {
+  --vd-page: #ebe9e4;
+  --vd-surface: #ffffff;
+  --vd-border: #c8c4bc;
+  --vd-text: #2b2b2b;
+  --vd-muted: #5a5752;
+  --vd-accent: #3d5a80;
+  --vd-accent-hover: #2c4466;
+  --vd-shadow: rgba(43, 43, 43, 0.08);
+  --vd-max: 920px;
+  --vd-font: Georgia, "Times New Roman", Times, serif;
+  --vd-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.vd-body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--vd-sans);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--vd-text);
+  background: var(--vd-page);
+}
+
+.vd-wrap {
+  max-width: var(--vd-max);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* —— Header / nav —— */
+.vd-site-header {
+  background: var(--vd-surface);
+  border-bottom: 1px solid var(--vd-border);
+  box-shadow: 0 1px 0 var(--vd-shadow);
+}
+
+.vd-header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  padding: 0.85rem 1.25rem;
+}
+
+a.vd-logo {
+  font-family: var(--vd-font);
+  font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--vd-text);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+a.vd-logo:hover {
+  color: var(--vd-accent);
+}
+
+.vd-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.2rem;
+  flex: 1;
+  min-width: min(100%, 280px);
+}
+
+.vd-nav a {
+  display: inline-block;
+  padding: 0.35rem 0.55rem;
+  font-size: 0.88rem;
+  color: var(--vd-accent);
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+.vd-nav a:hover,
+.vd-nav a:focus-visible {
+  color: var(--vd-accent-hover);
+  text-decoration: underline;
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .vd-header-inner {
+    padding: 1rem 1.25rem;
+  }
+
+  .vd-nav a {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.65rem;
+  }
+}
+
+/* —— Main —— */
+main.vd-main {
+  flex: 1;
+  padding: 2rem 0 3rem;
+}
+
+.vd-page-title {
+  font-family: var(--vd-font);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 400;
+  text-align: center;
+  margin: 0 0 1.25rem;
+  color: var(--vd-text);
+}
+
+/* Hero (home) */
+.vd-hero {
+  background: var(--vd-surface);
+  border: 1px solid var(--vd-border);
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 8px var(--vd-shadow);
+}
+
+.vd-hero h1 {
+  font-family: var(--vd-font);
+  font-size: clamp(1.65rem, 4.5vw, 2.25rem);
+  font-weight: 400;
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.vd-hero .vd-tagline {
+  font-family: var(--vd-font);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--vd-muted);
+  margin: 0 0 1rem;
+}
+
+.vd-hero .vd-chips {
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--vd-muted);
+  margin: 0;
+}
+
+.vd-hero-banner {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem auto 0;
+  border: 1px solid var(--vd-border);
+}
+
+.vd-hero-contact {
+  margin-top: 1.25rem;
+}
+
+.vd-hero-contact a {
+  color: var(--vd-accent);
+  font-weight: 600;
+}
+
+/* Feature rows (home sections) */
+.vd-feature {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem 1.5rem;
+  align-items: center;
+  background: var(--vd-surface);
+  border: 1px solid var(--vd-border);
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 1px 4px var(--vd-shadow);
+}
+
+@media (min-width: 700px) {
+  .vd-feature {
+    grid-template-columns: 1fr 1fr;
+    padding: 1.5rem;
+  }
+
+  .vd-feature.vd-feature--img-right .vd-feature-media {
+    order: 2;
+  }
+
+  .vd-feature.vd-feature--img-right .vd-feature-text {
+    order: 1;
+  }
+}
+
+.vd-feature-media img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border: 1px solid var(--vd-border);
+  display: block;
+}
+
+.vd-feature-text h2 {
+  font-family: var(--vd-font);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+  text-transform: none;
+}
+
+.vd-feature-text .vd-kicker {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--vd-muted);
+  margin: 0 0 0.5rem;
+}
+
+.vd-feature-text p {
+  margin: 0 0 1rem;
+  color: var(--vd-text);
+}
+
+.vd-cta {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--vd-surface);
+  background: var(--vd-accent);
+  padding: 0.45rem 1rem;
+  text-decoration: none;
+  border: 1px solid var(--vd-accent-hover);
+  border-radius: 2px;
+}
+
+.vd-cta:hover,
+.vd-cta:focus-visible {
+  background: var(--vd-accent-hover);
+  outline: none;
+}
+
+/* Inner pages: prose & galleries */
+.vd-prose {
+  background: var(--vd-surface);
+  border: 1px solid var(--vd-border);
+  padding: 1.5rem 1.25rem;
+  box-shadow: 0 1px 4px var(--vd-shadow);
+}
+
+.vd-prose p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  white-space: pre-line;
+}
+
+.vd-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.vd-gallery {
+  border: 1px solid var(--vd-border);
+  background: var(--vd-surface);
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.vd-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: middle;
+}
+
+/* Legacy gallery blocks on project pages */
+div.gallery {
+  border: 1px solid var(--vd-border);
+  background: var(--vd-surface);
+  overflow: hidden;
+}
+
+div.gallery:hover {
+  border-color: var(--vd-accent);
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.vd-iframe {
+  display: block;
+  max-width: 100%;
+  margin: 1rem auto;
+  border: 1px solid var(--vd-border);
+  background: var(--vd-surface);
+}
+
+/* Float-based .responsive grids (legacy pages) */
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+img.vd-centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* p5 / interactive */
+.vd-canvas-host {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+/* —— Footer —— */
+.vd-footer {
+  margin-top: auto;
+  padding: 1.5rem 0;
+  background: var(--vd-surface);
+  border-top: 1px solid var(--vd-border);
+  font-size: 0.9rem;
+  color: var(--vd-muted);
+}
+
+.vd-footer-inner {
+  text-align: center;
+}
+
+.vd-footer-inner p {
+  margin: 0.35rem 0;
+}
+
+.vd-footer a {
+  color: var(--vd-accent);
+}
+
+.vd-footer a:hover {
+  color: var(--vd-accent-hover);
+}
+
+/* Net art slim bar */
+.vd-netart-bar .vd-wrap {
+  max-width: none;
+}
+
+.vd-netart-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.88rem;
+}
+
+.vd-netart-inner a {
+  color: var(--vd-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.vd-netart-inner a:hover {
+  text-decoration: underline;
+}
+
+main.vd-main--netart {
+  padding: 1.5rem 1.25rem 2.5rem;
+}
